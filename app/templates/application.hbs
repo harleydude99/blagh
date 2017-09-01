@@ -4,6 +4,8 @@
   <p/>
   {{textarea rows='1' cols='60' placeholder='Title' class="new-post" value=title}}
   <p/>
+  {{textarea rows='1' cols='60' placeholder='Author' class="new-post" value=author}}
+  <p/>
   {{textarea rows="4" cols='60' placeholder='Body of blog post goes here' class="new-post" value=body}}
   <p/>
   <button {{action 'saveNewPost'}} class="pull-right">Create</button>
@@ -12,6 +14,10 @@
 {{#each model as |post|}}
   <fieldset class="post">
     <h2>{{post.title}}</h2>
+    <p/>
+    Author: {{post.author}}
+    <p/>
+    Published: {{post.pubDateTime}}
     <p/>
     {{markdown-to-html post.body}}
     <p/>
